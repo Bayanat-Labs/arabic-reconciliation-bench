@@ -1,0 +1,14 @@
+{
+  "name": "bayanat-arabic-reconciliation-renderer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Isolated Chromium rendering for the controlled Arabic Reconciliation Bench visual subset",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "pdf-lib": "1.17.1",
+    "playwright": "1.62.1"
+  }
+}

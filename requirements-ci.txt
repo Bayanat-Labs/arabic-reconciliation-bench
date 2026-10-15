@@ -1,0 +1,2 @@
+# Independent semantic/scorer tests create tiny local Parquet fixtures.
+pyarrow==26.0.0

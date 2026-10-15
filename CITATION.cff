@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite this dataset when using it."
+title: "Bayanat Arabic Reconciliation Bench"
+authors:
+  - name: Bayanat Labs
+version: 0.1.0
+date-released: 2026-10-15
+url: https://huggingface.co/datasets/Bayanat-Labs/arabic-reconciliation-bench
+license: CC-BY-4.0

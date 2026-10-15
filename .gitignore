@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+release/
+generated-release/
+downloaded-release/
+output/
+data/
+model-runs/
+render-work/
+test-results/
+*.partial
+.DS_Store

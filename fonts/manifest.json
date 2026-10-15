@@ -1,0 +1,102 @@
+{
+  "license": "OFL-1.1",
+  "source": "Noto Project fonts bundled with LibreOffice; license verified in each TTF name table",
+  "files": {
+    "NotoSansArabic-Regular.ttf": {
+      "sha256": "d6efa4c9fac8ecefd2de19676acc3a396ba7aee99ba7a2d513950246841b6725",
+      "bytes": 250880,
+      "name_table": {
+        "0": [
+          "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/arabic)"
+        ],
+        "1": [
+          "Noto Sans Arabic"
+        ],
+        "2": [
+          "Regular"
+        ],
+        "5": [
+          "Version 2.010; ttfautohint (v1.8.4.7-5d5b)"
+        ],
+        "13": [
+          "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL"
+        ],
+        "14": [
+          "https://scripts.sil.org/OFL"
+        ]
+      }
+    },
+    "NotoSansArabic-Bold.ttf": {
+      "sha256": "457926cb001ac787dc7415c89e6f5b1c4ce3a0f2c91d0cabc1bc19a05638e7de",
+      "bytes": 260904,
+      "name_table": {
+        "0": [
+          "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/arabic)"
+        ],
+        "1": [
+          "Noto Sans Arabic"
+        ],
+        "2": [
+          "Bold"
+        ],
+        "5": [
+          "Version 2.010; ttfautohint (v1.8.4.7-5d5b)"
+        ],
+        "13": [
+          "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL"
+        ],
+        "14": [
+          "https://scripts.sil.org/OFL"
+        ]
+      }
+    },
+    "NotoSans-Regular.ttf": {
+      "sha256": "f5f552c8c5edb61fe6efb824baf4d4de47b1a8689ab4925ff43f7bd6a4ebece5",
+      "bytes": 825628,
+      "name_table": {
+        "0": [
+          "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic)"
+        ],
+        "1": [
+          "Noto Sans"
+        ],
+        "2": [
+          "Regular"
+        ],
+        "5": [
+          "Version 2.015; ttfautohint (v1.8.4.7-5d5b)"
+        ],
+        "13": [
+          "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL"
+        ],
+        "14": [
+          "https://scripts.sil.org/OFL"
+        ]
+      }
+    },
+    "NotoSans-Bold.ttf": {
+      "sha256": "3a08a47daa00cade516425c15c57615aef2fd418ec9811a7b9f465088f92cc05",
+      "bytes": 838072,
+      "name_table": {
+        "0": [
+          "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic)"
+        ],
+        "1": [
+          "Noto Sans"
+        ],
+        "2": [
+          "Bold"
+        ],
+        "5": [
+          "Version 2.015; ttfautohint (v1.8.4.7-5d5b)"
+        ],
+        "13": [
+          "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL"
+        ],
+        "14": [
+          "https://scripts.sil.org/OFL"
+        ]
+      }
+    }
+  }
+}
