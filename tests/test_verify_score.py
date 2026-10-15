@@ -362,6 +362,24 @@ def release_fixture(folder):
 
 @unittest.skipUnless(importlib.util.find_spec("pyarrow"), "pyarrow required for physical-release tests")
 class ReleaseTests(unittest.TestCase):
+    def test_malformed_decision_jsonl_counts_invalid_instead_of_crashing(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            folder = Path(temporary)
+            rows = release_fixture(folder)
+            selected = [row["case_id"] for row in rows[:2]]
+            prediction_path = folder / "malformed-decisions.jsonl"
+            predictions = [{"case_id": row["case_id"], "decision": malformed,
+                            "contract_net_minor": row["gold_contract_net_minor"], "issues": row["gold_issues"],
+                            "evidence_ids": row["gold_evidence_ids"]}
+                           for row, malformed in zip(rows[:2], (["match"], {"value": "match"}))]
+            prediction_path.write_text("\n".join(json.dumps(value) for value in predictions) + "\n")
+            result = score.score(folder, prediction_path, case_ids=selected, bootstrap_samples=0)
+            self.assertEqual(result["metrics"]["cases"], 2)
+            self.assertEqual(result["metrics"]["schema_valid"], 0)
+            self.assertEqual(result["metrics"]["decision_exact"], 0)
+            self.assertEqual(result["metrics"]["core_exact"], 0)
+            self.assertEqual(result["metrics"]["strict_joint"], 0)
+
     def test_complete_release_audit_and_perfect_score(self):
         with tempfile.TemporaryDirectory() as temporary:
             rows = release_fixture(temporary)

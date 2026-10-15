@@ -49,7 +49,7 @@ def read_predictions(source: Any) -> dict[str, dict]:
 
 
 def prediction_valid(prediction: dict | None) -> bool:
-    if not isinstance(prediction, dict) or prediction.get("decision") not in DECISIONS:
+    if not isinstance(prediction, dict) or not isinstance(prediction.get("decision"), str) or prediction["decision"] not in DECISIONS:
         return False
     if set(prediction) - {"case_id", "decision", "contract_net_minor", "issues", "evidence_ids"}:
         return False
