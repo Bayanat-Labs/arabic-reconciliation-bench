@@ -3,7 +3,8 @@
 `run_models.py` evaluates pre-existing local Ollama weights. It never pulls a
 model, calls a cloud inference provider, reads credentials, or sends prompts
 through an environment-configured proxy. The default endpoint is loopback
-HTTP. Models run sequentially and each is unloaded after its run.
+HTTP. Models run sequentially and each is unloaded after its run. The initial release's sole completed language-model baseline is Qwen2.5 3B; an exploratory Fanar run
+was excluded for source-context ambiguity and is not a comparative result.
 
 ## Fixed evaluation conditions
 
@@ -25,7 +26,9 @@ HTTP. Models run sequentially and each is unloaded after its run.
   incorrect answer. Citation arrays remain unchanged.
 
 The local API's `/api/tags` result supplies the exact model digest and model
-metadata; the Ollama server version is recorded too. No missing model is
+metadata; the Ollama server version is recorded too. Saved requests, digests
+and options reproduce the disclosed setup; seeded GPU inference need not be
+bit-identical across hardware or Ollama versions. No missing model is
 automatically installed.
 
 ## Run and resume
@@ -35,7 +38,7 @@ python run_models.py \
   --release-dir /path/to/release \
   --output-dir /path/to/model-runs \
   --max-families 14 \
-  --models qwen2.5:3b hf.co/yasserrmd/Fanar-1-9B-Instruct-gguf:Q4_K_M \
+  --models qwen2.5:3b \
   --format schema --num-ctx 8192 --num-predict 2048
 ```
 
@@ -110,3 +113,10 @@ weights or outputs must respect source-model terms. In particular, the Qwen
 license contains conditions for creating, training or improving a distributed
 AI model using its outputs. Dataset/documentation and implementation licenses
 do not replace those model-specific terms.
+
+A single separately logged, gold-independent literal schema control asked the
+loaded Fanar to return the integer `12345` with the same schema and generation
+options. It returned the exact requested object. `protocol_smoke.json` preserves
+that request/response; it is excluded from benchmark selection, predictions and
+all scores. This checks numeric representability under the runtime grammar, not
+document reasoning or benchmark answer correctness.

@@ -123,7 +123,16 @@ produce predictions. Unknown labels/formatting produce explicit invalid
 predictions and a failure log rather than silent repairs. Its expected perfect
 score is a format ceiling, not a learned-model, OCR or production-system result.
 
-Model inference is optional and excluded from CI. See `RUNNER_PROTOCOL.md` for
+Model inference is optional and excluded from CI. To reproduce the sole
+published Qwen baseline with already-installed local weights, select it
+explicitly:
+
+```sh
+python run_models.py --release-dir downloaded-release --output-dir model-runs \
+  --max-families 14 --models qwen2.5:3b
+```
+
+See `RUNNER_PROTOCOL.md` for
 the local Ollama protocol, fixed decoding/output-schema settings, complete-family
 sampling, checkpoints, raw responses and model digests. See `RENDERING.md` for
 the separately bounded visual subset. The main dataset is a controlled text

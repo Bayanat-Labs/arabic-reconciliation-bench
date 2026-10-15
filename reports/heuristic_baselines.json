@@ -1,0 +1,4523 @@
+{
+  "created_utc": "2026-10-15T11:26:38.112266+00:00",
+  "cases": 67200,
+  "prediction_feature_columns": [
+    "case_id",
+    "question",
+    "documents.doc_id/title/text"
+  ],
+  "canonical_specs_loaded": false,
+  "gold_labels_loaded_during_prediction": false,
+  "code_sha256": {
+    "baseline_heuristics.py": "5438663b4686edc0378e7911abe78c345c55b9ab94a2717f692b760ccf1f8094",
+    "verify.py": "b2ed93cbea394a3ef92c3c61c160e758a14a39df6e78b722cbb81804015c72ca",
+    "score.py": "1390f0f7fd1289561f18c09680fcd7ede7c8ca7c916aea036708409e51f8031d"
+  },
+  "case_files": [
+    {
+      "path": "data/cases/challenge-00000.parquet",
+      "sha256": "63fec513967eb68426a418a4d875b226d8bca0fd29dc4e5dd18a7070aec082d7"
+    },
+    {
+      "path": "data/cases/test-00000.parquet",
+      "sha256": "340c68179d787b013e8e27d64be5f42d1a8e82f24b1a38d7a635dd1a56d6b29e"
+    },
+    {
+      "path": "data/cases/train-00000.parquet",
+      "sha256": "0c891b2b3d1f1b805c2fa42d1958cd8877a95932b7c7f4cad90eb33de368ce7d"
+    },
+    {
+      "path": "data/cases/validation-00000.parquet",
+      "sha256": "81501c49ba1c2a1867d6840b669858736507a81d168a6ede6b20f91fc8cb208e"
+    }
+  ],
+  "symbolic_parse_or_execution_failures": 0,
+  "baselines": [
+    {
+      "name": "prior_match_zero",
+      "label": "Fixed context-free prior",
+      "predictions": "prior-match-zero.predictions.jsonl.gz",
+      "prediction_sha256": "6da6c7971d2a9a2d6f33faaba6976348abd41772893de01435db69e15b45013f",
+      "score_file": "prior_match_zero.score.json",
+      "score_sha256": "6660480a614ab1176783a83939a5d2fc49b6a018ccc3180e43ac5530325b55ba",
+      "score": {
+        "schema_version": "1.0",
+        "scorer": {
+          "version": "1.0.0",
+          "file": "score.py",
+          "sha256": "1390f0f7fd1289561f18c09680fcd7ede7c8ca7c916aea036708409e51f8031d"
+        },
+        "case_universe_sha256": "8cab6a19be4c4c5f1b3b9f14c017a7de67cae00da38aec1caf703012b09be65b",
+        "evaluation_scope": "full_release",
+        "prediction_records": 67200,
+        "selected_families": 5600,
+        "metrics": {
+          "cases": 67200,
+          "schema_valid": 1.0,
+          "decision_exact": 0.3333333333333333,
+          "amount_exact": 0.0,
+          "issues_exact": 0.3333333333333333,
+          "core_exact": 0.0,
+          "evidence_reference_coverage": 0.0,
+          "citations_valid": 1.0,
+          "strict_joint": 0.0,
+          "evidence_precision": 0.0,
+          "evidence_recall": 0.0,
+          "evidence_f1": 0.0,
+          "evidence_micro": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "evidence_tp": 0,
+            "evidence_predicted": 0,
+            "evidence_reference": 4699016,
+            "invalid_citations": 0,
+            "missing_prediction": 0
+          },
+          "missing_evidence": {
+            "actual": 22400,
+            "predicted": 0,
+            "true_positive": 0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "decision_classification": {
+            "per_class": {
+              "insufficient_evidence": {
+                "support": 22400,
+                "predicted": 0,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "match": {
+                "support": 22400,
+                "predicted": 67200,
+                "precision": 0.3333333333333333,
+                "recall": 1.0,
+                "f1": 0.5
+              },
+              "mismatch": {
+                "support": 22400,
+                "predicted": 0,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            },
+            "confusion": {
+              "insufficient_evidence": {
+                "insufficient_evidence": 0,
+                "invalid_or_missing": 0,
+                "match": 22400,
+                "mismatch": 0
+              },
+              "match": {
+                "insufficient_evidence": 0,
+                "invalid_or_missing": 0,
+                "match": 22400,
+                "mismatch": 0
+              },
+              "mismatch": {
+                "insufficient_evidence": 0,
+                "invalid_or_missing": 0,
+                "match": 22400,
+                "mismatch": 0
+              }
+            }
+          }
+        },
+        "by": {
+          "split": {
+            "challenge": {
+              "cases": 6720,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 675772,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 2240,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 2240,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 2240,
+                    "predicted": 6720,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 2240,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 2240,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 2240,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 2240,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "test": {
+              "cases": 6720,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 446084,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 2240,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 2240,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 2240,
+                    "predicted": 6720,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 2240,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 2240,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 2240,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 2240,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "train": {
+              "cases": 47040,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 3125768,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 15680,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 15680,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 15680,
+                    "predicted": 47040,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 15680,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 15680,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 15680,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 15680,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "validation": {
+              "cases": 6720,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 451392,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 2240,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 2240,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 2240,
+                    "predicted": 6720,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 2240,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 2240,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 2240,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 2240,
+                    "mismatch": 0
+                  }
+                }
+              }
+            }
+          },
+          "view": {
+            "ar_eastern": {
+              "cases": 16800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 1174754,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 5600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 5600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 5600,
+                    "predicted": 16800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 5600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "ar_reordered": {
+              "cases": 16800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 1174754,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 5600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 5600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 5600,
+                    "predicted": 16800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 5600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "ar_western": {
+              "cases": 16800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 1174754,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 5600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 5600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 5600,
+                    "predicted": 16800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 5600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "en_control": {
+              "cases": 16800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 1174754,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 5600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 5600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 5600,
+                    "predicted": 16800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 5600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            }
+          },
+          "mechanism": {
+            "amendment_date": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 346420,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 4800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "amendment_status": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 346972,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 4800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "cancellation": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 334544,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 4800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "cumulative_billing": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 330256,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 4800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "currency": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 333776,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 4800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "discount": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 339656,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 4800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "duplicate_invoice": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 336456,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 4800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "invoice_total": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 334544,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 4800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "pack_conversion": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 337664,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 4800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "price_tolerance": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 332080,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 4800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "receipt_date": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 327976,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 4800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "receipt_quantity": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 333828,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 4800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "rejected_quantity": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 334192,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 4800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "return_quantity": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 0.3333333333333333,
+              "amount_exact": 0.0,
+              "issues_exact": 0.3333333333333333,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 330652,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 4800,
+                    "precision": 0.3333333333333333,
+                    "recall": 1.0,
+                    "f1": 0.5
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  }
+                }
+              }
+            }
+          },
+          "gold_decision": {
+            "insufficient_evidence": {
+              "cases": 22400,
+              "schema_valid": 1.0,
+              "decision_exact": 0.0,
+              "amount_exact": 0.0,
+              "issues_exact": 0.0,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 490040,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 22400,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": 0.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 22400,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  },
+                  "match": {
+                    "support": 0,
+                    "predicted": 22400,
+                    "precision": 0.0,
+                    "recall": null,
+                    "f1": 0.0
+                  },
+                  "mismatch": {
+                    "support": 0,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": null,
+                    "f1": null
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 22400,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "match": {
+              "cases": 22400,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 0.0,
+              "issues_exact": 1.0,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 2108488,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 0,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": null
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 0,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": null,
+                    "f1": null
+                  },
+                  "match": {
+                    "support": 22400,
+                    "predicted": 22400,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 0,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": null,
+                    "f1": null
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 22400,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "mismatch": {
+              "cases": 22400,
+              "schema_valid": 1.0,
+              "decision_exact": 0.0,
+              "amount_exact": 0.0,
+              "issues_exact": 0.0,
+              "core_exact": 0.0,
+              "evidence_reference_coverage": 0.0,
+              "citations_valid": 1.0,
+              "strict_joint": 0.0,
+              "evidence_precision": 0.0,
+              "evidence_recall": 0.0,
+              "evidence_f1": 0.0,
+              "evidence_micro": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "evidence_tp": 0,
+                "evidence_predicted": 0,
+                "evidence_reference": 2100488,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 0,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": null
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 0,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": null,
+                    "f1": null
+                  },
+                  "match": {
+                    "support": 0,
+                    "predicted": 22400,
+                    "precision": 0.0,
+                    "recall": null,
+                    "f1": 0.0
+                  },
+                  "mismatch": {
+                    "support": 22400,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": 0.0,
+                    "f1": 0.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 22400,
+                    "mismatch": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "paired_both_joint": {
+          "all": {
+            "pairs": 95200,
+            "rate": 0.0
+          },
+          "invariant/digit_script": {
+            "pairs": 16800,
+            "rate": 0.0
+          },
+          "invariant/document_order": {
+            "pairs": 16800,
+            "rate": 0.0
+          },
+          "invariant/language_control": {
+            "pairs": 16800,
+            "rate": 0.0
+          },
+          "sensitivity/critical_fact": {
+            "pairs": 22400,
+            "rate": 0.0
+          },
+          "sensitivity/missing_document": {
+            "pairs": 22400,
+            "rate": 0.0
+          }
+        },
+        "paired_both_decision": {
+          "all": {
+            "pairs": 95200,
+            "rate": 0.17647058823529413
+          },
+          "invariant/digit_script": {
+            "pairs": 16800,
+            "rate": 0.3333333333333333
+          },
+          "invariant/document_order": {
+            "pairs": 16800,
+            "rate": 0.3333333333333333
+          },
+          "invariant/language_control": {
+            "pairs": 16800,
+            "rate": 0.3333333333333333
+          },
+          "sensitivity/critical_fact": {
+            "pairs": 22400,
+            "rate": 0.0
+          },
+          "sensitivity/missing_document": {
+            "pairs": 22400,
+            "rate": 0.0
+          }
+        },
+        "paired_both_core": {
+          "all": {
+            "pairs": 95200,
+            "rate": 0.0
+          },
+          "invariant/digit_script": {
+            "pairs": 16800,
+            "rate": 0.0
+          },
+          "invariant/document_order": {
+            "pairs": 16800,
+            "rate": 0.0
+          },
+          "invariant/language_control": {
+            "pairs": 16800,
+            "rate": 0.0
+          },
+          "sensitivity/critical_fact": {
+            "pairs": 22400,
+            "rate": 0.0
+          },
+          "sensitivity/missing_document": {
+            "pairs": 22400,
+            "rate": 0.0
+          }
+        },
+        "all_view_joint": {
+          "complete_worlds": 16800,
+          "partial_worlds_excluded": 0,
+          "rate": 0.0
+        },
+        "all_family_joint": {
+          "complete_families": 5600,
+          "rate": 0.0
+        },
+        "confidence_intervals": {
+          "method": "percentile bootstrap, families sampled with replacement",
+          "confidence_level": 0.95,
+          "samples": 1000,
+          "seed": 20261015,
+          "families": 5600,
+          "intervals": {
+            "all_family_joint": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "all_view_joint": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "amount_exact": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "citations_valid": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "core_exact": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "decision_exact": {
+              "low": 0.3333333333333333,
+              "high": 0.3333333333333333
+            },
+            "evidence_f1": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "evidence_precision": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "evidence_recall": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "evidence_reference_coverage": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "issues_exact": {
+              "low": 0.3333333333333333,
+              "high": 0.3333333333333333
+            },
+            "missing_evidence_recall": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "paired_both_core:all": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "paired_both_core:invariant/digit_script": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "paired_both_core:invariant/document_order": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "paired_both_core:invariant/language_control": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "paired_both_core:sensitivity/critical_fact": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "paired_both_core:sensitivity/missing_document": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "paired_both_decision:all": {
+              "low": 0.17647058823529413,
+              "high": 0.17647058823529413
+            },
+            "paired_both_decision:invariant/digit_script": {
+              "low": 0.3333333333333333,
+              "high": 0.3333333333333333
+            },
+            "paired_both_decision:invariant/document_order": {
+              "low": 0.3333333333333333,
+              "high": 0.3333333333333333
+            },
+            "paired_both_decision:invariant/language_control": {
+              "low": 0.3333333333333333,
+              "high": 0.3333333333333333
+            },
+            "paired_both_decision:sensitivity/critical_fact": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "paired_both_decision:sensitivity/missing_document": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "paired_both_joint:all": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "paired_both_joint:invariant/digit_script": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "paired_both_joint:invariant/document_order": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "paired_both_joint:invariant/language_control": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "paired_both_joint:sensitivity/critical_fact": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "paired_both_joint:sensitivity/missing_document": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "schema_valid": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "strict_joint": {
+              "low": 0.0,
+              "high": 0.0
+            }
+          }
+        },
+        "interpretation": {
+          "strict_joint": "Decision, nominal contract amount, issue set exact; all reference evidence covered; no nonexistent citations. Extra valid citations allowed.",
+          "evidence_metrics": "Reference-set agreement, not semantic proof correctness.",
+          "paired_both_joint": "Both members pass strict_joint; incomplete selected pairs excluded.",
+          "all_view_joint": "All four controlled views pass strict_joint for one family-world; incomplete groups excluded."
+        }
+      }
+    },
+    {
+      "name": "format_aware_symbolic_reference",
+      "label": "FORMAT-AWARE SYMBOLIC REFERENCE",
+      "predictions": "format-aware-symbolic.predictions.jsonl.gz",
+      "prediction_sha256": "74915d3fde3bab310ea201fc16856e765c0aecbc14a3125490d763702d035052",
+      "score_file": "format_aware_symbolic_reference.score.json",
+      "score_sha256": "688e148db7aae38ac46f3ea51d6fdd79fd4433c18926bb5c9d75a9b049dec36e",
+      "score": {
+        "schema_version": "1.0",
+        "scorer": {
+          "version": "1.0.0",
+          "file": "score.py",
+          "sha256": "1390f0f7fd1289561f18c09680fcd7ede7c8ca7c916aea036708409e51f8031d"
+        },
+        "case_universe_sha256": "8cab6a19be4c4c5f1b3b9f14c017a7de67cae00da38aec1caf703012b09be65b",
+        "evaluation_scope": "full_release",
+        "prediction_records": 67200,
+        "selected_families": 5600,
+        "metrics": {
+          "cases": 67200,
+          "schema_valid": 1.0,
+          "decision_exact": 1.0,
+          "amount_exact": 1.0,
+          "issues_exact": 1.0,
+          "core_exact": 1.0,
+          "evidence_reference_coverage": 1.0,
+          "citations_valid": 1.0,
+          "strict_joint": 1.0,
+          "evidence_precision": 1.0,
+          "evidence_recall": 1.0,
+          "evidence_f1": 1.0,
+          "evidence_micro": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "evidence_tp": 4699016,
+            "evidence_predicted": 4699016,
+            "evidence_reference": 4699016,
+            "invalid_citations": 0,
+            "missing_prediction": 0
+          },
+          "missing_evidence": {
+            "actual": 22400,
+            "predicted": 22400,
+            "true_positive": 22400,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "decision_classification": {
+            "per_class": {
+              "insufficient_evidence": {
+                "support": 22400,
+                "predicted": 22400,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "match": {
+                "support": 22400,
+                "predicted": 22400,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "mismatch": {
+                "support": 22400,
+                "predicted": 22400,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              }
+            },
+            "confusion": {
+              "insufficient_evidence": {
+                "insufficient_evidence": 22400,
+                "invalid_or_missing": 0,
+                "match": 0,
+                "mismatch": 0
+              },
+              "match": {
+                "insufficient_evidence": 0,
+                "invalid_or_missing": 0,
+                "match": 22400,
+                "mismatch": 0
+              },
+              "mismatch": {
+                "insufficient_evidence": 0,
+                "invalid_or_missing": 0,
+                "match": 0,
+                "mismatch": 22400
+              }
+            }
+          }
+        },
+        "by": {
+          "split": {
+            "challenge": {
+              "cases": 6720,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 675772,
+                "evidence_predicted": 675772,
+                "evidence_reference": 675772,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 2240,
+                "predicted": 2240,
+                "true_positive": 2240,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 2240,
+                    "predicted": 2240,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 2240,
+                    "predicted": 2240,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 2240,
+                    "predicted": 2240,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 2240,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 2240,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 2240
+                  }
+                }
+              }
+            },
+            "test": {
+              "cases": 6720,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 446084,
+                "evidence_predicted": 446084,
+                "evidence_reference": 446084,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 2240,
+                "predicted": 2240,
+                "true_positive": 2240,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 2240,
+                    "predicted": 2240,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 2240,
+                    "predicted": 2240,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 2240,
+                    "predicted": 2240,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 2240,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 2240,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 2240
+                  }
+                }
+              }
+            },
+            "train": {
+              "cases": 47040,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 3125768,
+                "evidence_predicted": 3125768,
+                "evidence_reference": 3125768,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 15680,
+                "predicted": 15680,
+                "true_positive": 15680,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 15680,
+                    "predicted": 15680,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 15680,
+                    "predicted": 15680,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 15680,
+                    "predicted": 15680,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 15680,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 15680,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 15680
+                  }
+                }
+              }
+            },
+            "validation": {
+              "cases": 6720,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 451392,
+                "evidence_predicted": 451392,
+                "evidence_reference": 451392,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 2240,
+                "predicted": 2240,
+                "true_positive": 2240,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 2240,
+                    "predicted": 2240,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 2240,
+                    "predicted": 2240,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 2240,
+                    "predicted": 2240,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 2240,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 2240,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 2240
+                  }
+                }
+              }
+            }
+          },
+          "view": {
+            "ar_eastern": {
+              "cases": 16800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 1174754,
+                "evidence_predicted": 1174754,
+                "evidence_reference": 1174754,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 5600,
+                "predicted": 5600,
+                "true_positive": 5600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 5600,
+                    "predicted": 5600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 5600,
+                    "predicted": 5600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 5600,
+                    "predicted": 5600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 5600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 5600
+                  }
+                }
+              }
+            },
+            "ar_reordered": {
+              "cases": 16800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 1174754,
+                "evidence_predicted": 1174754,
+                "evidence_reference": 1174754,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 5600,
+                "predicted": 5600,
+                "true_positive": 5600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 5600,
+                    "predicted": 5600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 5600,
+                    "predicted": 5600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 5600,
+                    "predicted": 5600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 5600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 5600
+                  }
+                }
+              }
+            },
+            "ar_western": {
+              "cases": 16800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 1174754,
+                "evidence_predicted": 1174754,
+                "evidence_reference": 1174754,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 5600,
+                "predicted": 5600,
+                "true_positive": 5600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 5600,
+                    "predicted": 5600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 5600,
+                    "predicted": 5600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 5600,
+                    "predicted": 5600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 5600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 5600
+                  }
+                }
+              }
+            },
+            "en_control": {
+              "cases": 16800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 1174754,
+                "evidence_predicted": 1174754,
+                "evidence_reference": 1174754,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 5600,
+                "predicted": 5600,
+                "true_positive": 5600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 5600,
+                    "predicted": 5600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 5600,
+                    "predicted": 5600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 5600,
+                    "predicted": 5600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 5600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 5600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 5600
+                  }
+                }
+              }
+            }
+          },
+          "mechanism": {
+            "amendment_date": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 346420,
+                "evidence_predicted": 346420,
+                "evidence_reference": 346420,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 1600,
+                "true_positive": 1600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 1600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 1600
+                  }
+                }
+              }
+            },
+            "amendment_status": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 346972,
+                "evidence_predicted": 346972,
+                "evidence_reference": 346972,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 1600,
+                "true_positive": 1600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 1600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 1600
+                  }
+                }
+              }
+            },
+            "cancellation": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 334544,
+                "evidence_predicted": 334544,
+                "evidence_reference": 334544,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 1600,
+                "true_positive": 1600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 1600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 1600
+                  }
+                }
+              }
+            },
+            "cumulative_billing": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 330256,
+                "evidence_predicted": 330256,
+                "evidence_reference": 330256,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 1600,
+                "true_positive": 1600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 1600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 1600
+                  }
+                }
+              }
+            },
+            "currency": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 333776,
+                "evidence_predicted": 333776,
+                "evidence_reference": 333776,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 1600,
+                "true_positive": 1600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 1600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 1600
+                  }
+                }
+              }
+            },
+            "discount": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 339656,
+                "evidence_predicted": 339656,
+                "evidence_reference": 339656,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 1600,
+                "true_positive": 1600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 1600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 1600
+                  }
+                }
+              }
+            },
+            "duplicate_invoice": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 336456,
+                "evidence_predicted": 336456,
+                "evidence_reference": 336456,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 1600,
+                "true_positive": 1600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 1600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 1600
+                  }
+                }
+              }
+            },
+            "invoice_total": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 334544,
+                "evidence_predicted": 334544,
+                "evidence_reference": 334544,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 1600,
+                "true_positive": 1600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 1600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 1600
+                  }
+                }
+              }
+            },
+            "pack_conversion": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 337664,
+                "evidence_predicted": 337664,
+                "evidence_reference": 337664,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 1600,
+                "true_positive": 1600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 1600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 1600
+                  }
+                }
+              }
+            },
+            "price_tolerance": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 332080,
+                "evidence_predicted": 332080,
+                "evidence_reference": 332080,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 1600,
+                "true_positive": 1600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 1600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 1600
+                  }
+                }
+              }
+            },
+            "receipt_date": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 327976,
+                "evidence_predicted": 327976,
+                "evidence_reference": 327976,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 1600,
+                "true_positive": 1600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 1600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 1600
+                  }
+                }
+              }
+            },
+            "receipt_quantity": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 333828,
+                "evidence_predicted": 333828,
+                "evidence_reference": 333828,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 1600,
+                "true_positive": 1600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 1600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 1600
+                  }
+                }
+              }
+            },
+            "rejected_quantity": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 334192,
+                "evidence_predicted": 334192,
+                "evidence_reference": 334192,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 1600,
+                "true_positive": 1600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 1600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 1600
+                  }
+                }
+              }
+            },
+            "return_quantity": {
+              "cases": 4800,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 330652,
+                "evidence_predicted": 330652,
+                "evidence_reference": 330652,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 1600,
+                "predicted": 1600,
+                "true_positive": 1600,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 1600,
+                    "predicted": 1600,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 1600,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 1600,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 1600
+                  }
+                }
+              }
+            }
+          },
+          "gold_decision": {
+            "insufficient_evidence": {
+              "cases": 22400,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 490040,
+                "evidence_predicted": 490040,
+                "evidence_reference": 490040,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 22400,
+                "predicted": 22400,
+                "true_positive": 22400,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 22400,
+                    "predicted": 22400,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "match": {
+                    "support": 0,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": null,
+                    "f1": null
+                  },
+                  "mismatch": {
+                    "support": 0,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": null,
+                    "f1": null
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 22400,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "match": {
+              "cases": 22400,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 2108488,
+                "evidence_predicted": 2108488,
+                "evidence_reference": 2108488,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 0,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": null
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 0,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": null,
+                    "f1": null
+                  },
+                  "match": {
+                    "support": 22400,
+                    "predicted": 22400,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  },
+                  "mismatch": {
+                    "support": 0,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": null,
+                    "f1": null
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 22400,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  }
+                }
+              }
+            },
+            "mismatch": {
+              "cases": 22400,
+              "schema_valid": 1.0,
+              "decision_exact": 1.0,
+              "amount_exact": 1.0,
+              "issues_exact": 1.0,
+              "core_exact": 1.0,
+              "evidence_reference_coverage": 1.0,
+              "citations_valid": 1.0,
+              "strict_joint": 1.0,
+              "evidence_precision": 1.0,
+              "evidence_recall": 1.0,
+              "evidence_f1": 1.0,
+              "evidence_micro": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "evidence_tp": 2100488,
+                "evidence_predicted": 2100488,
+                "evidence_reference": 2100488,
+                "invalid_citations": 0,
+                "missing_prediction": 0
+              },
+              "missing_evidence": {
+                "actual": 0,
+                "predicted": 0,
+                "true_positive": 0,
+                "precision": null,
+                "recall": null
+              },
+              "decision_classification": {
+                "per_class": {
+                  "insufficient_evidence": {
+                    "support": 0,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": null,
+                    "f1": null
+                  },
+                  "match": {
+                    "support": 0,
+                    "predicted": 0,
+                    "precision": null,
+                    "recall": null,
+                    "f1": null
+                  },
+                  "mismatch": {
+                    "support": 22400,
+                    "predicted": 22400,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                  }
+                },
+                "confusion": {
+                  "insufficient_evidence": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "match": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 0
+                  },
+                  "mismatch": {
+                    "insufficient_evidence": 0,
+                    "invalid_or_missing": 0,
+                    "match": 0,
+                    "mismatch": 22400
+                  }
+                }
+              }
+            }
+          }
+        },
+        "paired_both_joint": {
+          "all": {
+            "pairs": 95200,
+            "rate": 1.0
+          },
+          "invariant/digit_script": {
+            "pairs": 16800,
+            "rate": 1.0
+          },
+          "invariant/document_order": {
+            "pairs": 16800,
+            "rate": 1.0
+          },
+          "invariant/language_control": {
+            "pairs": 16800,
+            "rate": 1.0
+          },
+          "sensitivity/critical_fact": {
+            "pairs": 22400,
+            "rate": 1.0
+          },
+          "sensitivity/missing_document": {
+            "pairs": 22400,
+            "rate": 1.0
+          }
+        },
+        "paired_both_decision": {
+          "all": {
+            "pairs": 95200,
+            "rate": 1.0
+          },
+          "invariant/digit_script": {
+            "pairs": 16800,
+            "rate": 1.0
+          },
+          "invariant/document_order": {
+            "pairs": 16800,
+            "rate": 1.0
+          },
+          "invariant/language_control": {
+            "pairs": 16800,
+            "rate": 1.0
+          },
+          "sensitivity/critical_fact": {
+            "pairs": 22400,
+            "rate": 1.0
+          },
+          "sensitivity/missing_document": {
+            "pairs": 22400,
+            "rate": 1.0
+          }
+        },
+        "paired_both_core": {
+          "all": {
+            "pairs": 95200,
+            "rate": 1.0
+          },
+          "invariant/digit_script": {
+            "pairs": 16800,
+            "rate": 1.0
+          },
+          "invariant/document_order": {
+            "pairs": 16800,
+            "rate": 1.0
+          },
+          "invariant/language_control": {
+            "pairs": 16800,
+            "rate": 1.0
+          },
+          "sensitivity/critical_fact": {
+            "pairs": 22400,
+            "rate": 1.0
+          },
+          "sensitivity/missing_document": {
+            "pairs": 22400,
+            "rate": 1.0
+          }
+        },
+        "all_view_joint": {
+          "complete_worlds": 16800,
+          "partial_worlds_excluded": 0,
+          "rate": 1.0
+        },
+        "all_family_joint": {
+          "complete_families": 5600,
+          "rate": 1.0
+        },
+        "confidence_intervals": {
+          "method": "percentile bootstrap, families sampled with replacement",
+          "confidence_level": 0.95,
+          "samples": 1000,
+          "seed": 20261015,
+          "families": 5600,
+          "intervals": {
+            "all_family_joint": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "all_view_joint": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "amount_exact": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "citations_valid": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "core_exact": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "decision_exact": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "evidence_f1": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "evidence_precision": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "evidence_recall": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "evidence_reference_coverage": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "issues_exact": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "missing_evidence_precision": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "missing_evidence_recall": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_core:all": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_core:invariant/digit_script": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_core:invariant/document_order": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_core:invariant/language_control": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_core:sensitivity/critical_fact": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_core:sensitivity/missing_document": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_decision:all": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_decision:invariant/digit_script": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_decision:invariant/document_order": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_decision:invariant/language_control": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_decision:sensitivity/critical_fact": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_decision:sensitivity/missing_document": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_joint:all": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_joint:invariant/digit_script": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_joint:invariant/document_order": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_joint:invariant/language_control": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_joint:sensitivity/critical_fact": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "paired_both_joint:sensitivity/missing_document": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "schema_valid": {
+              "low": 1.0,
+              "high": 1.0
+            },
+            "strict_joint": {
+              "low": 1.0,
+              "high": 1.0
+            }
+          }
+        },
+        "interpretation": {
+          "strict_joint": "Decision, nominal contract amount, issue set exact; all reference evidence covered; no nonexistent citations. Extra valid citations allowed.",
+          "evidence_metrics": "Reference-set agreement, not semantic proof correctness.",
+          "paired_both_joint": "Both members pass strict_joint; incomplete selected pairs excluded.",
+          "all_view_joint": "All four controlled views pass strict_joint for one family-world; incomplete groups excluded."
+        }
+      }
+    }
+  ],
+  "interpretation": [
+    "Prior: always match, zero nominal amount, empty issues/evidence; no context access and no fitted parameters. Decision classes are tied globally, so match is an explicit fixed tie-break.",
+    "FORMAT-AWARE SYMBOLIC REFERENCE: explicitly recognizes all released controlled labels, synonyms, numeric formats and document titles, then executes the independent formal policy.",
+    "This is an executable format ceiling, not a competitive learned model, OCR system, unrestricted Arabic parser or production procurement tool.",
+    "The parser ignores unmarked policy prose and implements the benchmark's declared fixed policy. All failures are retained as invalid outputs."
+  ],
+  "elapsed_seconds": 73.33716016588733,
+  "rescored_utc": "2026-10-15T11:57:40.667855+00:00",
+  "rescore_reason": "Decision string type guard robustness repair; original predictions, all metrics and intervals unchanged; no inference or prediction regeneration.",
+  "rescore_elapsed_seconds": 54.526420624926686
+}

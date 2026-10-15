@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "independent_oracle": "Exact integer quotient/remainder half-up, no generator/core import",
+  "verifier_sha256": "b2ed93cbea394a3ef92c3c61c160e758a14a39df6e78b722cbb81804015c72ca",
+  "input_sha256": {
+    "data/cases/challenge-00000.parquet": "63fec513967eb68426a418a4d875b226d8bca0fd29dc4e5dd18a7070aec082d7",
+    "data/cases/test-00000.parquet": "340c68179d787b013e8e27d64be5f42d1a8e82f24b1a38d7a635dd1a56d6b29e",
+    "data/cases/train-00000.parquet": "0c891b2b3d1f1b805c2fa42d1958cd8877a95932b7c7f4cad90eb33de368ce7d",
+    "data/cases/validation-00000.parquet": "81501c49ba1c2a1867d6840b669858736507a81d168a6ede6b20f91fc8cb208e",
+    "data/pairs/challenge-00000.parquet": "5197a721c20097eac91c69ebb0133359578cc103c6a1e7d8edf10542948d0b12",
+    "data/pairs/test-00000.parquet": "55c2bc4d24c6dd90de27cef9f65d94fc5a4b8e9165cfe4126acba658068be3cd",
+    "data/pairs/train-00000.parquet": "3478c1998f4fb7dffde1301322b0897a505c355f761890c7834a181f3b1a36fa",
+    "data/pairs/validation-00000.parquet": "032962a87966b4a902a862eff483a4d310a144d0b55d00f4609c6002f94b22f8",
+    "specs/challenge.jsonl.gz": "bd8a402a01e689621104fc7e48f30321b2edbe5660348c1aecce6181bb4d11f4",
+    "specs/test.jsonl.gz": "14db4e7d2ca63eb186cbe5d5a5543b92bd2c8be00d85792bbd09044b2bf3d98f",
+    "specs/train.jsonl.gz": "48ffe4344d3f7799ce6e5929790dcaf4b27a46a7a5d295e7f6eec5e9bbea03e8",
+    "specs/validation.jsonl.gz": "6af6c86b309b79502efb15b85994d34e420caa67a237a4f69f753371c94be0e9",
+    "statistics.json": "6c08e88b1e6558dd6a9ab090f5003c2b704dcf96401da717177979ae65382a4b"
+  },
+  "cases": 67200,
+  "families": 5600,
+  "pairs": 95200,
+  "counts": {
+    "split": {
+      "challenge": 6720,
+      "test": 6720,
+      "train": 47040,
+      "validation": 6720
+    },
+    "world": {
+      "clean": 22400,
+      "critical_edit": 22400,
+      "missing_evidence": 22400
+    },
+    "view": {
+      "ar_eastern": 16800,
+      "ar_reordered": 16800,
+      "ar_western": 16800,
+      "en_control": 16800
+    },
+    "mechanism": {
+      "amendment_date": 4800,
+      "amendment_status": 4800,
+      "cancellation": 4800,
+      "cumulative_billing": 4800,
+      "currency": 4800,
+      "discount": 4800,
+      "duplicate_invoice": 4800,
+      "invoice_total": 4800,
+      "pack_conversion": 4800,
+      "price_tolerance": 4800,
+      "receipt_date": 4800,
+      "receipt_quantity": 4800,
+      "rejected_quantity": 4800,
+      "return_quantity": 4800
+    },
+    "decision": {
+      "insufficient_evidence": 22400,
+      "match": 22400,
+      "mismatch": 22400
+    },
+    "families_by_split": {
+      "challenge": 560,
+      "test": 560,
+      "train": 3920,
+      "validation": 560
+    }
+  },
+  "families_by_mechanism": {
+    "amendment_date": 400,
+    "amendment_status": 400,
+    "cancellation": 400,
+    "cumulative_billing": 400,
+    "currency": 400,
+    "discount": 400,
+    "duplicate_invoice": 400,
+    "invoice_total": 400,
+    "pack_conversion": 400,
+    "price_tolerance": 400,
+    "receipt_date": 400,
+    "receipt_quantity": 400,
+    "rejected_quantity": 400,
+    "return_quantity": 400
+  },
+  "pair_counts": {
+    "invariant/digit_script": 16800,
+    "invariant/document_order": 16800,
+    "invariant/language_control": 16800,
+    "sensitivity/critical_fact": 22400,
+    "sensitivity/missing_document": 22400
+  },
+  "checks": [
+    "every canonical world independently recomputed",
+    "every public gold equals recomputed spec",
+    "typed parquet schema",
+    "visible field markers/labels/numeric values and opaque identities",
+    "four-view canonical invariance",
+    "one recorded critical value leaf per family",
+    "one recorded missing document, all retained facts unchanged",
+    "family split closure",
+    "complete expected world-view and pair membership",
+    "no nonexistent gold citations"
+  ],
+  "limitations": [
+    "Checks generated policy semantics, not real-world accounting correctness.",
+    "No human or expert validation; controlled Arabic/English wording is not natural document coverage.",
+    "Reference evidence agreement is not a minimal-proof or semantic faithfulness guarantee."
+  ]
+}

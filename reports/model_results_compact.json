@@ -1,0 +1,464 @@
+{
+  "schema_version": "1.0",
+  "source_baseline_report_sha256": "306cc73aa8245b8db3b3dd2d8498d3a68e2f431da7cebfd6f6bcc108613562ac",
+  "dataset_fingerprint": "2eef42f9c621abe9c5d32e8c4f76df6ee15d4e3f38cfcb9858fea06603ecc3c2",
+  "sample_seed": "reconciliation-model-test-v1",
+  "selection": "Round-robin mechanisms, then lowest SHA-256 family rank within each mechanism; complete 12-row families.",
+  "split": "test",
+  "families": 14,
+  "cases_per_model": 168,
+  "sample_composition": {
+    "gold_amount_numeric_cases": 168,
+    "gold_amount_null_cases": 0,
+    "omitted_role_families": {
+      "history": 5,
+      "policy": 4,
+      "returns": 5
+    },
+    "gold_decision_cases": {
+      "insufficient_evidence": 56,
+      "match": 56,
+      "mismatch": 56
+    },
+    "view_cases": {
+      "ar_eastern": 42,
+      "ar_reordered": 42,
+      "ar_western": 42,
+      "en_control": 42
+    }
+  },
+  "interpretation": "Small deterministic stratified controlled synthetic test sample. Complete correlated family views are not independent observations. No ranking or production generalization claim.",
+  "constrained_decoding": true,
+  "models": [
+    {
+      "model": "qwen2.5:3b",
+      "display_name": "Qwen2.5 3B (local GGUF)",
+      "model_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "run_directory": "qwen2.5-3b-442789f4",
+      "cases": 168,
+      "families": 14,
+      "coverage": {
+        "requested_families": 14,
+        "requested_cases": 168,
+        "completed_cases": 168,
+        "complete": true,
+        "schema_valid_outputs": 164,
+        "transport_failures": 0,
+        "parse_failures": {
+          "evidence_ids_not_unique_string_array": 3,
+          "incomplete_generation": 1
+        },
+        "wall_seconds_latest_attempts": 1749.563,
+        "all_attempt_count": 168,
+        "predictions_sha256": "b3be525b98d959d332483481ea4de0d941c3e712773c567f86cb4c7bd6f2e7c1"
+      },
+      "primary": {
+        "decision_exact": 0.31547619047619047,
+        "amount_exact": 0.0,
+        "issues_exact": 0.24404761904761904,
+        "core_exact": 0.0
+      },
+      "evidence_diagnostics": {
+        "evidence_precision": 0.47449511231396263,
+        "evidence_recall": 0.2663860710347306,
+        "evidence_f1": 0.27383554968631757,
+        "evidence_reference_coverage": 0.017857142857142856,
+        "citations_valid": 0.6071428571428571,
+        "strict_joint": 0.0
+      },
+      "schema_valid": 0.9761904761904762,
+      "context": {
+        "configured_num_ctx": 8192,
+        "official_source_context": 32768,
+        "local_gguf_context_metadata": {
+          "qwen2.context_length": 32768
+        },
+        "requests_with_reported_token_counts": 168,
+        "maximum_reported_prompt_plus_generated_tokens": 5096,
+        "requests_exceeding_official_source_context": 0,
+        "prompts_exceeding_official_source_context": 0
+      },
+      "per_class": {
+        "insufficient_evidence": {
+          "support": 56,
+          "predicted": 96,
+          "precision": 0.3229166666666667,
+          "recall": 0.5535714285714286,
+          "f1": 0.40789473684210525
+        },
+        "match": {
+          "support": 56,
+          "predicted": 63,
+          "precision": 0.3333333333333333,
+          "recall": 0.375,
+          "f1": 0.35294117647058826
+        },
+        "mismatch": {
+          "support": 56,
+          "predicted": 5,
+          "precision": 0.2,
+          "recall": 0.017857142857142856,
+          "f1": 0.03278688524590164
+        }
+      },
+      "confusion": {
+        "insufficient_evidence": {
+          "insufficient_evidence": 31,
+          "invalid_or_missing": 1,
+          "match": 21,
+          "mismatch": 3
+        },
+        "match": {
+          "insufficient_evidence": 32,
+          "invalid_or_missing": 2,
+          "match": 21,
+          "mismatch": 1
+        },
+        "mismatch": {
+          "insufficient_evidence": 33,
+          "invalid_or_missing": 1,
+          "match": 21,
+          "mismatch": 1
+        }
+      },
+      "by_view": {
+        "ar_eastern": {
+          "cases": 42,
+          "decision_exact": 0.38095238095238093,
+          "amount_exact": 0.0,
+          "issues_exact": 0.23809523809523808,
+          "core_exact": 0.0,
+          "strict_joint": 0.0
+        },
+        "ar_reordered": {
+          "cases": 42,
+          "decision_exact": 0.35714285714285715,
+          "amount_exact": 0.0,
+          "issues_exact": 0.2619047619047619,
+          "core_exact": 0.0,
+          "strict_joint": 0.0
+        },
+        "ar_western": {
+          "cases": 42,
+          "decision_exact": 0.21428571428571427,
+          "amount_exact": 0.0,
+          "issues_exact": 0.21428571428571427,
+          "core_exact": 0.0,
+          "strict_joint": 0.0
+        },
+        "en_control": {
+          "cases": 42,
+          "decision_exact": 0.30952380952380953,
+          "amount_exact": 0.0,
+          "issues_exact": 0.2619047619047619,
+          "core_exact": 0.0,
+          "strict_joint": 0.0
+        }
+      },
+      "paired_both_decision": {
+        "all": {
+          "pairs": 238,
+          "rate": 0.08823529411764706
+        },
+        "invariant/digit_script": {
+          "pairs": 42,
+          "rate": 0.16666666666666666
+        },
+        "invariant/document_order": {
+          "pairs": 42,
+          "rate": 0.09523809523809523
+        },
+        "invariant/language_control": {
+          "pairs": 42,
+          "rate": 0.047619047619047616
+        },
+        "sensitivity/critical_fact": {
+          "pairs": 56,
+          "rate": 0.017857142857142856
+        },
+        "sensitivity/missing_document": {
+          "pairs": 56,
+          "rate": 0.125
+        }
+      },
+      "paired_both_core": {
+        "all": {
+          "pairs": 238,
+          "rate": 0.0
+        },
+        "invariant/digit_script": {
+          "pairs": 42,
+          "rate": 0.0
+        },
+        "invariant/document_order": {
+          "pairs": 42,
+          "rate": 0.0
+        },
+        "invariant/language_control": {
+          "pairs": 42,
+          "rate": 0.0
+        },
+        "sensitivity/critical_fact": {
+          "pairs": 56,
+          "rate": 0.0
+        },
+        "sensitivity/missing_document": {
+          "pairs": 56,
+          "rate": 0.0
+        }
+      },
+      "paired_both_joint": {
+        "all": {
+          "pairs": 238,
+          "rate": 0.0
+        },
+        "invariant/digit_script": {
+          "pairs": 42,
+          "rate": 0.0
+        },
+        "invariant/document_order": {
+          "pairs": 42,
+          "rate": 0.0
+        },
+        "invariant/language_control": {
+          "pairs": 42,
+          "rate": 0.0
+        },
+        "sensitivity/critical_fact": {
+          "pairs": 56,
+          "rate": 0.0
+        },
+        "sensitivity/missing_document": {
+          "pairs": 56,
+          "rate": 0.0
+        }
+      },
+      "all_view_joint": {
+        "complete_worlds": 42,
+        "partial_worlds_excluded": 0,
+        "rate": 0.0
+      },
+      "all_family_joint": {
+        "complete_families": 14,
+        "rate": 0.0
+      },
+      "confidence_intervals": {
+        "method": "percentile bootstrap, families sampled with replacement",
+        "confidence_level": 0.95,
+        "samples": 1000,
+        "seed": 20261015,
+        "families": 14,
+        "intervals": {
+          "all_family_joint": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "all_view_joint": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "amount_exact": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "citations_valid": {
+            "low": 0.5117559523809524,
+            "high": 0.7023809523809523
+          },
+          "core_exact": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "decision_exact": {
+            "low": 0.27380952380952384,
+            "high": 0.35714285714285715
+          },
+          "evidence_f1": {
+            "low": 0.19910848078308738,
+            "high": 0.34711378209806704
+          },
+          "evidence_precision": {
+            "low": 0.40513775049657325,
+            "high": 0.5561756826413101
+          },
+          "evidence_recall": {
+            "low": 0.18550076132840385,
+            "high": 0.34635106791307013
+          },
+          "evidence_reference_coverage": {
+            "low": 0.0,
+            "high": 0.047619047619047616
+          },
+          "issues_exact": {
+            "low": 0.20238095238095238,
+            "high": 0.2857142857142857
+          },
+          "missing_evidence_precision": {
+            "low": 0.27157952069716773,
+            "high": 0.36561002874480997
+          },
+          "missing_evidence_recall": {
+            "low": 0.4107142857142857,
+            "high": 0.6964285714285714
+          },
+          "paired_both_core:all": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "paired_both_core:invariant/digit_script": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "paired_both_core:invariant/document_order": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "paired_both_core:invariant/language_control": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "paired_both_core:sensitivity/critical_fact": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "paired_both_core:sensitivity/missing_document": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "paired_both_decision:all": {
+            "low": 0.05042016806722689,
+            "high": 0.13025210084033614
+          },
+          "paired_both_decision:invariant/digit_script": {
+            "low": 0.09464285714285717,
+            "high": 0.23869047619047565
+          },
+          "paired_both_decision:invariant/document_order": {
+            "low": 0.023809523809523808,
+            "high": 0.16666666666666666
+          },
+          "paired_both_decision:invariant/language_control": {
+            "low": 0.0,
+            "high": 0.09583333333333278
+          },
+          "paired_both_decision:sensitivity/critical_fact": {
+            "low": 0.0,
+            "high": 0.05357142857142857
+          },
+          "paired_both_decision:sensitivity/missing_document": {
+            "low": 0.05357142857142857,
+            "high": 0.19642857142857142
+          },
+          "paired_both_joint:all": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "paired_both_joint:invariant/digit_script": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "paired_both_joint:invariant/document_order": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "paired_both_joint:invariant/language_control": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "paired_both_joint:sensitivity/critical_fact": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "paired_both_joint:sensitivity/missing_document": {
+            "low": 0.0,
+            "high": 0.0
+          },
+          "schema_valid": {
+            "low": 0.9523809523809523,
+            "high": 1.0
+          },
+          "strict_joint": {
+            "low": 0.0,
+            "high": 0.0
+          }
+        }
+      },
+      "scorer": {
+        "version": "1.0.0",
+        "file": "score.py",
+        "sha256": "1390f0f7fd1289561f18c09680fcd7ede7c8ca7c916aea036708409e51f8031d"
+      },
+      "timing": {
+        "latest_attempt_wall_seconds_total": 1749.5626,
+        "request_wall_seconds_mean": 10.414063095238095,
+        "request_wall_seconds_median": 7.4002,
+        "prompt_tokens_min": 1921,
+        "prompt_tokens_max": 3741,
+        "output_tokens_min": 54,
+        "output_tokens_max": 2048
+      },
+      "protocol": {
+        "binding": {
+          "protocol_version": "arabic-reconciliation-ollama-v1",
+          "model": "qwen2.5:3b",
+          "model_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+          "dataset_fingerprint": "2eef42f9c621abe9c5d32e8c4f76df6ee15d4e3f38cfcb9858fea06603ecc3c2",
+          "model_input_code_sha256": "8dcc793d6cbe46c56bda54d114d7c13263dcbb9d221b442971c913c1899e9d07",
+          "options": {
+            "temperature": 0,
+            "seed": 20261015,
+            "num_ctx": 8192,
+            "num_predict": 2048
+          },
+          "format": "schema",
+          "truncate": false,
+          "shift": false,
+          "output_schema_sha256": "54f6c010fce9f27edd6562da9586dc57ff881b4f26e57faffaacd148e9b88c0d",
+          "sample_seed": "reconciliation-model-test-v1",
+          "ollama_version": "0.32.5"
+        },
+        "runner_code_sha256": "e0ee880bee158282d6a10ec595b93afe4afe7dd18ca50740ee137186fd347ecf",
+        "constrained_decoding": true
+      },
+      "artifact_sha256": {
+        "run_manifest.json": "67af5a2df6e85bd91901d2b8eaf1ac371d1606ba87bd27971567d09d207e5599",
+        "raw_responses.jsonl": "f8c4d410f3f9dab7a2731038f191bf0a8dbcfcc3b4942be39b8966e6554495bc",
+        "predictions.jsonl": "b3be525b98d959d332483481ea4de0d941c3e712773c567f86cb4c7bd6f2e7c1",
+        "score_report.json": "426a003fcd48ea1b32d0eb212f830040160ce12db605f2967305592386d1858f"
+      }
+    }
+  ],
+  "excluded_exploration": {
+    "model": "hf.co/yasserrmd/Fanar-1-9B-Instruct-gguf:Q4_K_M",
+    "model_digest": "688386aeeab85a09e8d10f4512fa89ffaa131df16b6b9eb515b3844460ee5599",
+    "completed_requests": 8,
+    "official_source_context": 4096,
+    "local_gguf_declared_context": 8192,
+    "configured_num_ctx": 8192,
+    "requests_exceeding_official_source_context": 2,
+    "max_reported_prompt_plus_generated_tokens": 4688,
+    "reason": "Stopped at request boundary for official-source versus local-GGUF context discrepancy and observed context extrapolation. No Fanar benchmark aggregate score is included in the initial release.",
+    "published_aggregate_score": false,
+    "partial_checkpoints_in_publication": false,
+    "preserved_local_directory": "model-runs-exploratory-excluded/hf.co-yasserrmd-Fanar-1-9B-Instruct-gguf-Q4_K_M-ba9d539f",
+    "separate_literal_control": "protocol_smoke.json is a separate Fanar runtime control, not a Qwen control or benchmark case."
+  },
+  "separate_schema_smoke": {
+    "model": "hf.co/yasserrmd/Fanar-1-9B-Instruct-gguf:Q4_K_M",
+    "model_digest": "688386aeeab85a09e8d10f4512fa89ffaa131df16b6b9eb515b3844460ee5599",
+    "literal_control_passed": true,
+    "requested_amount": 12345,
+    "benchmark_included": false,
+    "record_sha256": "18fb114e6a9d8d7c287f51d7586209ce02add62b2ab0c5a8a43efe9855e8c7c2"
+  },
+  "machine_info": {
+    "hw.model": "Mac15,6",
+    "hw.memsize": "19327352832",
+    "machdep.cpu.brand_string": "Apple M3 Pro",
+    "os": "Darwin",
+    "os_release": "25.6.0",
+    "architecture": "arm64",
+    "python": "3.13.15",
+    "timing_scope": "Per-request wall time during local desktop execution, not controlled hardware throughput benchmark."
+  }
+}

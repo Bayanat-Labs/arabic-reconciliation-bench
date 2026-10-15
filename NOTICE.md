@@ -30,10 +30,14 @@ weight digests and quantizations are recorded in the run manifests and
   `qwen2.5:3b` GGUF artifact identified by its manifest digest.
 - **Fanar-1-9B-Instruct**: the
   [official QCRI model card](https://huggingface.co/QCRI/Fanar-1-9B-Instruct)
-  declares Apache-2.0. The evaluation used the community
+  declares Apache-2.0. A separately logged non-benchmark numeric-format control used the community
   [yasserrmd GGUF quantization](https://huggingface.co/yasserrmd/Fanar-1-9B-Instruct-gguf),
-  with the exact local digest recorded in its manifest. This records upstream
-  provenance; it does not redistribute those model materials.
+  with the exact local digest recorded in `model_source_info.json`. An exploratory
+  benchmark run was stopped and excluded from the published baseline because
+  some requests exceeded the original model's documented 4,096-token context;
+  the conversion/runtime declared 8,192. No partial Fanar aggregate score or
+  partial benchmark responses are included. This records upstream provenance;
+  it does not redistribute those model materials.
 
 These upstream notices were checked on 2026-10-15. CC BY 4.0 for the original
 benchmark does not replace model-provider terms or grant additional rights

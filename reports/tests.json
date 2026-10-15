@@ -1,0 +1,40 @@
+{
+  "created_utc": "2026-10-15T11:55:56.796768+00:00",
+  "tests_run": 22,
+  "passed": 22,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "successful": true,
+  "elapsed_seconds": 2.7858933329116553,
+  "test_ids": [
+    "test_verify_score.OracleTests.test_approved_returns_and_cutoff",
+    "test_verify_score.OracleTests.test_clean_filters_future_draft_void_and_half_up",
+    "test_verify_score.OracleTests.test_cumulative_order_and_receipt_limits",
+    "test_verify_score.OracleTests.test_discount_currency_cancel_and_stated_arithmetic",
+    "test_verify_score.OracleTests.test_gold_mutations_and_unrecorded_second_fact_rejected",
+    "test_verify_score.OracleTests.test_latest_eligible_approved_amendment_and_contract_not_payable",
+    "test_verify_score.OracleTests.test_malformed_canonical_values_rejected",
+    "test_verify_score.OracleTests.test_missing_evidence_amount_dependency_and_policy_trace",
+    "test_verify_score.OracleTests.test_pack_conversion_uses_rejected_same_unit",
+    "test_verify_score.OracleTests.test_posted_duplicate_even_if_other_order",
+    "test_verify_score.OracleTests.test_round_per_line_instead_of_invoice_total",
+    "test_verify_score.OracleTests.test_tolerance_boundary_is_inclusive",
+    "test_verify_score.ReleaseTests.test_complete_release_audit_and_perfect_score",
+    "test_verify_score.ReleaseTests.test_cross_split_sibling_packet_rejected",
+    "test_verify_score.ReleaseTests.test_malformed_decision_jsonl_counts_invalid_instead_of_crashing",
+    "test_verify_score.ReleaseTests.test_public_gold_corruption_and_display_corruption_rejected",
+    "test_verify_score.ScorerTests.test_duplicate_prediction_ids_rejected",
+    "test_verify_score.ScorerTests.test_family_cluster_bootstrap_deterministic_and_not_case_independent",
+    "test_verify_score.ScorerTests.test_joint_allows_extra_valid_citation_but_not_invented",
+    "test_verify_score.ScorerTests.test_missing_reference_citation_and_invalid_outputs",
+    "test_verify_score.VisibleParserTests.test_minor_units_percentages_and_arabic_digits",
+    "test_verify_score.VisibleParserTests.test_reordered_visible_header_does_not_inherit_last_row"
+  ],
+  "source_sha256": {
+    "test_verify_score.py": "272ccfd5a908d85bdb1406d031e17e37526eb97262e4cab7d3ed2506ea31ec41",
+    "verify.py": "b2ed93cbea394a3ef92c3c61c160e758a14a39df6e78b722cbb81804015c72ca",
+    "score.py": "1390f0f7fd1289561f18c09680fcd7ede7c8ca7c916aea036708409e51f8031d",
+    "baseline_heuristics.py": "5438663b4686edc0378e7911abe78c345c55b9ab94a2717f692b760ccf1f8094"
+  }
+}

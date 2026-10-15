@@ -22,9 +22,9 @@ Action majors were checked against the official
 [checkout](https://github.com/actions/checkout),
 [setup-python](https://github.com/actions/setup-python), and
 [upload-artifact](https://github.com/actions/upload-artifact) documentation on
-2026-10-15. A clean source-only local run passed all 21 tests. The
-[hosted GitHub Actions run](https://github.com/Bayanat-Labs/arabic-reconciliation-bench/actions/runs/38729192963)
-also passed all 21 tests with zero failures, errors or skips on 2026-10-15
-(source commit `d34e8e4b3a2462840259585e71991b8013bcd1a5`). Its JSON/JUnit
+2026-10-15. A clean source-only local run passed all 22 tests. The
+[hosted GitHub Actions run](https://github.com/Bayanat-Labs/arabic-reconciliation-bench/actions/runs/38730979100)
+also passed all 22 tests with zero failures, errors or skips on 2026-10-15
+(source commit `02a9b3f4edb52a02f821102e53dfa7a150c563b4`). Its JSON/JUnit
 artifact records the tested source hashes. This is a software-test result,
 separate from full-release data and visual validation.

@@ -21,7 +21,7 @@ SOURCES=[
  ('Ciru invoice sandbox','https://github.com/ciru-ai/invoice-sandbox-benchmark','Existing synthetic invoice workflow fixtures; not copied into this resource.')]
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--release-dir',type=Path,required=True);p.add_argument('--validation',type=Path);p.add_argument('--models',type=Path);p.add_argument('--heuristics',type=Path);args=p.parse_args();r=args.release_dir
+ p=argparse.ArgumentParser();p.add_argument('--release-dir',type=Path,required=True);p.add_argument('--validation',type=Path);p.add_argument('--models',type=Path);p.add_argument('--model-table',type=Path);p.add_argument('--heuristics',type=Path);args=p.parse_args();r=args.release_dir
  stats=json.loads((r/'statistics.json').read_text());meta=['---','pretty_name: Bayanat Arabic Reconciliation Bench','language:','- ar','- en','license: cc-by-4.0','task_categories:','- question-answering','- text-classification','size_categories:','- 10K<n<100K','annotations_creators:','- machine-generated','language_creators:','- machine-generated','tags:','- arabic','- procurement','- document-understanding','- counterfactual-evaluation','- synthetic','- accounting','configs:']
  configs=['cases','pairs']+(['pages'] if (r/'data/pages').exists() else [])
  for config in configs:
@@ -42,6 +42,26 @@ def main():
  if args.models and args.models.exists():
   model=json.loads(args.models.read_text());shutil.copyfile(args.models,reportdir/'model_results.json')
   baseline='Actual local-model results and exact evaluation scope are in [reports/model_results.json](reports/model_results.json). Interpret these as a small reproducible diagnostic sample, not a population leaderboard or production certification. Per-model manifests, raw responses and normalized predictions are included under `baselines/`.'
+ if args.model_table:
+  measured=json.loads(args.model_table.read_text())
+  if measured.get('families')!=14 or measured.get('cases_per_model')!=168 or not measured.get('schema_constrained_decoding'):
+   raise ValueError('Unexpected completed model baseline protocol')
+  model_rows=[]
+  for row in measured['rows']:
+   def pct(key):return f"{100*row[key]:.1f}%"
+   def interval(key):
+    ci=row[key+'_95ci'];return f"{pct(key+'_exact')} [{100*ci['low']:.1f}, {100*ci['high']:.1f}]"
+   model_rows.append('| '+row['model']+' | 168 | '+interval('decision')+' | '+pct('amount_exact')+' | '+interval('core')+' |')
+  baseline+='''
+
+The direct-answer, tool-free local GGUF baseline was run on **14 preselected test families, 168 correlated case views**, one family per intervention mechanism. Fixed JSON-schema constrained decoding was used; no wrong or schema-invalid answer was repaired or retried. Core exact requires decision, nominal amount and issue set together, without evidence requirements.
+
+| Local model | Case views | Decision exact [95% CI] | Amount exact | Core exact [95% CI] |
+|---|---:|---:|---:|---:|
+'''+ '\n'.join(model_rows)+'''
+
+Brackets are 95% family-cluster bootstrap intervals in percentage points (1,000 resamples). There are 14 generated family clusters, not 168 independent observations. Selected omissions cover returns, history and policy only; all 168 amount targets are numeric, with no null-target coverage. This small synthetic diagnostic does not rank general model quality or estimate deployment accuracy. Exact model licenses, digests, token/context limitations, original responses and paired/evidence scores are disclosed in [RESULTS.md](RESULTS.md).
+'''
  heuristics=''
  if args.heuristics:
   heuristic_report=json.loads(args.heuristics.read_text());shutil.copyfile(args.heuristics,reportdir/'heuristic_baselines.json')
@@ -91,6 +111,8 @@ model_visible = {{"question": row["question"], "documents": row["documents"]}}
 
 The `pairs` configuration links case IDs and declares either invariant representations or sensitivity interventions. Optional `pages` contains images and field boxes from the bounded visual subset; it does not add independent business cases. PDFs and visual manifests are under `visual_subset/`.
 
+The visual subset contains **28 generated families, 168 PDF packets, 1,120 Arabic image pages and 21,042 field-container boxes** across test/challenge and two numeral views. Boxes are mechanically derived from rendered field containers, not human text-region annotations. All 56 clean-to-critical visual comparisons change exactly one document image. See the [visual subset description](visual_subset/README.md), [audit](visual_subset/validation_report.json), and [rendering instructions](code/RENDERING.md).
+
 The downloadable source includes a local Ollama runner, a strict JSONL scorer and an independent validator:
 
 ```sh
@@ -98,7 +120,7 @@ python -m pip install -r code/requirements.txt
 python code/verify.py --release . --expected-families-per-mechanism 400 --output ../validation.json
 python code/score.py --help
 python code/tests/run_tests.py --output ../test-results
-python code/run_models.py --release-dir . --output-dir ../model-runs --max-families 14
+python code/run_models.py --release-dir . --output-dir ../model-runs --max-families 14 --models qwen2.5:3b
 ```
 
 See [code/REPRODUCING.md](code/REPRODUCING.md) for frozen Hub downloads, regeneration, explicit subset scoring and transparent baselines. The source repository includes a small independent semantic/mutation-test CI; it does not download this dataset or run models.
@@ -152,6 +174,7 @@ Report decision accuracy and per-class precision/recall, exact amount, exact iss
 {baseline}
 
 The readable actual-model report is [RESULTS.md](RESULTS.md), with the precise evaluation sample and decoding protocol; results are diagnostic measurements rather than deployment claims.
+Deterministically selected [error examples](baselines/local_models/FAILURE_ANALYSIS.md) include exact visible inputs, reference answers and predictions. They illustrate observed errors without establishing their cause or prevalence in real documents.
 
 {heuristics}
 
@@ -203,10 +226,14 @@ weight digests and quantizations are recorded in the run manifests and
   `qwen2.5:3b` GGUF artifact identified by its manifest digest.
 - **Fanar-1-9B-Instruct**: the
   [official QCRI model card](https://huggingface.co/QCRI/Fanar-1-9B-Instruct)
-  declares Apache-2.0. The evaluation used the community
+  declares Apache-2.0. A separately logged non-benchmark numeric-format control used the community
   [yasserrmd GGUF quantization](https://huggingface.co/yasserrmd/Fanar-1-9B-Instruct-gguf),
-  with the exact local digest recorded in its manifest. This records upstream
-  provenance; it does not redistribute those model materials.
+  with the exact local digest recorded in `model_source_info.json`. An exploratory
+  benchmark run was stopped and excluded from the published baseline because
+  some requests exceeded the original model's documented 4,096-token context;
+  the conversion/runtime declared 8,192. No partial Fanar aggregate score or
+  partial benchmark responses are included. This records upstream provenance;
+  it does not redistribute those model materials.
 
 These upstream notices were checked on 2026-10-15. CC BY 4.0 for the original
 benchmark does not replace model-provider terms or grant additional rights

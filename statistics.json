@@ -1,0 +1,78 @@
+{
+  "dataset_id": "Bayanat-Labs/arabic-reconciliation-bench",
+  "version": "0.1.0",
+  "seed": 20261015,
+  "families": 5600,
+  "family_counts": {
+    "train": 3920,
+    "validation": 560,
+    "test": 560,
+    "challenge": 560
+  },
+  "counts": {
+    "cases": 67200,
+    "pairs": 95200
+  },
+  "split_counts": {
+    "cases": {
+      "train": 47040,
+      "validation": 6720,
+      "test": 6720,
+      "challenge": 6720
+    },
+    "pairs": {
+      "train": 66640,
+      "validation": 9520,
+      "test": 9520,
+      "challenge": 9520
+    }
+  },
+  "mechanisms": [
+    "receipt_quantity",
+    "rejected_quantity",
+    "return_quantity",
+    "pack_conversion",
+    "cumulative_billing",
+    "price_tolerance",
+    "discount",
+    "invoice_total",
+    "currency",
+    "duplicate_invoice",
+    "amendment_date",
+    "amendment_status",
+    "receipt_date",
+    "cancellation"
+  ],
+  "views": [
+    "ar_western",
+    "ar_eastern",
+    "ar_reordered",
+    "en_control"
+  ],
+  "mechanism_case_counts": {
+    "receipt_quantity": 4800,
+    "rejected_quantity": 4800,
+    "return_quantity": 4800,
+    "pack_conversion": 4800,
+    "cumulative_billing": 4800,
+    "price_tolerance": 4800,
+    "discount": 4800,
+    "invoice_total": 4800,
+    "currency": 4800,
+    "duplicate_invoice": 4800,
+    "amendment_date": 4800,
+    "amendment_status": 4800,
+    "receipt_date": 4800,
+    "cancellation": 4800
+  },
+  "evidence_field_count": {
+    "min": 7,
+    "max": 135,
+    "mean": 69.92583333333333
+  },
+  "data_origin": "Original programmatically generated fictional business cases; Arabic/English controlled templates authored with AI assistance; no human expert validation.",
+  "code_sha256": {
+    "core.py": "8dcc793d6cbe46c56bda54d114d7c13263dcbb9d221b442971c913c1899e9d07",
+    "generator.py": "1c3cff8b481b05dc4b29f58ad7de8c0d100479424494fcd435034cbfde7a3e22"
+  }
+}

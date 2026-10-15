@@ -31,7 +31,7 @@ def copy_tree(source, destination):
 def checksums(root):
     lines=[]
     for path in sorted(root.rglob('*')):
-        if path.is_file() and path.name != 'SHA256SUMS':
+        if path.is_file() and path.name != 'SHA256SUMS' and not any(x in {'.git','.cache','__pycache__','node_modules','.DS_Store'} for x in path.relative_to(root).parts):
             digest=hashlib.sha256(path.read_bytes()).hexdigest()
             lines.append(f'{digest}  {path.relative_to(root).as_posix()}')
     (root/'SHA256SUMS').write_text('\n'.join(lines)+'\n',encoding='utf-8')
@@ -53,8 +53,8 @@ def main():
     visual=read(r/'visual_subset/validation_report.json')
     tests=read(a.test_dir/'test-summary.json')
     models=read(a.model_dir/'compact_results.json')
-    if not models.get('models') or any(not x['coverage']['complete'] for x in models['models']):
-        raise ValueError('Local model runs are incomplete')
+    if len(models.get('models',[]))!=1 or any(not x['coverage']['complete'] for x in models['models']):
+        raise ValueError('The initial release requires its completed local Qwen baseline')
     for model in models['models']:
         for name,digest in model['artifact_sha256'].items():
             path=a.model_dir/model['run_directory']/name
@@ -91,6 +91,8 @@ def main():
     # convenient root-level reading copy whose relative links remain valid.
     for name in ('compact_results.json','baseline_report.json'):
         results=results.replace(f']({name})',f'](baselines/local_models/{name})')
+    if (a.model_dir/'FAILURE_ANALYSIS.md').exists():
+        results+='\n[Inspect deterministic error examples and exact visible inputs](baselines/local_models/FAILURE_ANALYSIS.md).\n'
     (r/'RESULTS.md').write_text(results,encoding='utf-8')
     (r/'baselines/README.md').write_text('''# Reproducible baselines
 
@@ -121,6 +123,8 @@ They are not human accounting validation or evidence of production readiness.
     card=(r/'README.md').read_text()
     card=re.sub(r'\A---\n.*?\n---\n','',card,flags=re.S)
     card=re.sub(r'\]\(code/([^)]*)\)',r'](\1)',card)
+    card=card.replace('`LICENSE`, `code/LICENSE`','`DATA_LICENSE.txt`, `LICENSE`')
+    card=card.replace('code/','')
     # Data/reports are deliberately not duplicated in GitHub.
     for prefix in ('data/','specs/','reports/','visual_subset/','baselines/'):
         card=card.replace(f']({prefix}',f'](https://huggingface.co/datasets/Bayanat-Labs/arabic-reconciliation-bench/blob/main/{prefix}')

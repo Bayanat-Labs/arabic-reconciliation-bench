@@ -3,12 +3,7 @@ __pycache__/
 .venv/
 node_modules/
 release/
-generated-release/
-downloaded-release/
-output/
-data/
-model-runs/
 render-work/
-test-results/
+model-runs/
 *.partial
 .DS_Store
