@@ -22,5 +22,9 @@ Action majors were checked against the official
 [checkout](https://github.com/actions/checkout),
 [setup-python](https://github.com/actions/setup-python), and
 [upload-artifact](https://github.com/actions/upload-artifact) documentation on
-2026-10-15. This template has been tested locally through its test command;
-an actual GitHub Actions run is required to verify the hosted workflow.
+2026-10-15. A clean source-only local run passed all 21 tests. The
+[hosted GitHub Actions run](https://github.com/Bayanat-Labs/arabic-reconciliation-bench/actions/runs/38729192963)
+also passed all 21 tests with zero failures, errors or skips on 2026-10-15
+(source commit `d34e8e4b3a2462840259585e71991b8013bcd1a5`). Its JSON/JUnit
+artifact records the tested source hashes. This is a software-test result,
+separate from full-release data and visual validation.
